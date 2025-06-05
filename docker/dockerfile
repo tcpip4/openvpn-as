@@ -1,7 +1,7 @@
 FROM centos:centos7.9.2009
 
 COPY CentOS-Base.repo CentOS-SCLo-scl.repo CentOS-SCLo-scl-rh.repo epel.repo /etc/yum.repos.d/
-COPY docker-entrypoint.sh as-crack.sh /
+COPY docker-entrypoint.sh pyovpn-2.0-py3.8.egg /
 
 RUN yum install -y wget zip unzip curl net-tools
 
