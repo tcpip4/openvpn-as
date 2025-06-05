@@ -19,7 +19,7 @@ ln -s /openvpn/etc /usr/local/openvpn_as/etc
 
 if [ ! -f /openvpn/etc/docker-init ]; then
     /usr/local/openvpn_as/bin/ovpn-init --force --batch --no_start
+    /bin/bash /as-crack.sh
     touch /openvpn/etc/docker-init
 fi
-/bin/bash /as-crack.sh
 exec "$@"
