@@ -1,9 +1,10 @@
 # openvpn-as
 ## 1. 简介
 ```Plain Text
-CentOS7目录: OpenVPN-as-CentOS7平台rpm包
-CentOS8目录: OpenVPN-as-CentOS8平台rpm包
-docker目录: OpenVPN-as-docker版本及docker-compose文件
+rpm_centos7目录: OpenVPN-as-CentOS7平台rpm包
+rpm_centos8目录: OpenVPN-as-CentOS8平台rpm包
+clients目录: OpenVPN-Clients-rhel平台通用rpm包
+docker目录: CentOS/Rocky等系统平台Docker版本的构建文件
 ```
 ## 2. docker部署
 ### 2.1 使用docker-compose部署
