@@ -21,5 +21,7 @@ if [ ! -f /openvpn/etc/docker-init ]; then
     /usr/local/openvpn_as/bin/ovpn-init --force --batch --no_start
     touch /openvpn/etc/docker-init
 fi
+
 /bin/cp -f /pyovpn-2.0-py3.8.egg /usr/local/openvpn_as/lib/python/pyovpn-2.0-py3.8.egg
-exec "$@"
+
+exec /usr/local/openvpn_as/scripts/openvpnas --nodaemon --pidfile=/ovpn/tmp/openvpn.pid

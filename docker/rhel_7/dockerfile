@@ -1,7 +1,7 @@
 FROM centos:centos7.9.2009
 
 COPY CentOS-Base.repo CentOS-SCLo-scl.repo CentOS-SCLo-scl-rh.repo epel.repo /etc/yum.repos.d/
-COPY docker-entrypoint.sh pyovpn-2.0-py3.8.egg /
+COPY entrypoint.sh pyovpn-2.0-py3.8.egg /
 
 RUN yum install -y wget zip unzip curl net-tools
 
@@ -13,5 +13,4 @@ RUN mkdir -p /openvpn /ovpn/tmp  /ovpn/sock && sed -i 's#~/tmp#/ovpn/tmp#g;s#~/s
 EXPOSE 943/tcp 1194/udp 443/tcp
 VOLUME /openvpn
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["/usr/local/openvpn_as/scripts/openvpnas", "--nodaemon", "--pidfile=/ovpn/tmp/openvpn.pid"]
+ENTRYPOINT ["/entrypoint.sh"]
